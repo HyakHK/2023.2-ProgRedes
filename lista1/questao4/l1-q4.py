@@ -1,0 +1,2 @@
+from funcao import *
+
