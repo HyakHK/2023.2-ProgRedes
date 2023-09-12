@@ -1,20 +1,18 @@
 import sys,os
-
+from funcao import *
+# Respectivamente quantidade, valor min e valor max
 n_rep = 0
 ls_int = []
 while n_rep < 3:
     try:
-        inteiro = int(input('Digite 3 numeros inteiros'))
+        #1 quantidade, 2 valor min, 3 valor max
+        inteiro = int(input(f'Digite o {n_rep + 1} numero inteiro: '))
         ls_int.append(inteiro)
         n_rep = n_rep + 1
-    except ValueError:
-        print("Invalido, tente um numero inteiro")
     except:
-        print('Erro desconhecido:' ,sys.exec_info()[0])
+        print('Erro:' ,sys.exc_info()[0] + "Tente novamente")
+
+lista = gerar_lista(ls_int)
 
 
-
-# arquivo open
-
-# DIRETORIO = os.path.dirname(os.path.abspath(__file__))
-# NOMEARQUIVO = DIRETORIO + '\\valores_nao_ordenados.txt'
+salvar_lista(lista)
