@@ -13,10 +13,12 @@ def gerar_lista(ls_int):
         print('Erro:' ,sys.exc_info()[0])
         certo = False
         rng = None
-        print(certo, rng)
     return certo, rng
     
-def salvar_lista(lista):
+def salvar_lista(lista, bl):
+    gen = (str(el) for el in lista)
+    sep = '\n'
+    lista = sep.join(gen)
     trg = "s" 
     r = True
 
@@ -33,7 +35,10 @@ def salvar_lista(lista):
             arquivo_path = os.path.join(here, nome_arquivo, f"{nome_lista}.txt")
 
             with open(arquivo_path, "w") as new_created_file:
-                new_created_file.write('\n'.join(map(str, lista)))
+                new_created_file.write(lista)
+                new_created_file.write("\n" + str(bl))
+                
+
 
         except Exception as e:
             r = False

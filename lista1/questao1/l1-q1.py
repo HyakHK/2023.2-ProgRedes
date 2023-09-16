@@ -15,4 +15,5 @@ while n_rep < 3:
 lista = gerar_lista(ls_int)
 
 
-salvar_lista(lista)
+
+salvar_lista(lista[1], lista[0])
