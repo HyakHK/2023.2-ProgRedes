@@ -55,28 +55,25 @@ def lstCreate():
     if lstNew.count('') > 0:
         lstNew.remove('')
         #da lista 0,1,10,11,12,15
-    print(lstNew)
     return lstNew
 
 lstNew = lstCreate()
 #Organizar lista para salvar no dados_estatisticos
 def data_lst(lstNew):
+    print(lstNew)
     Flist = []
     with open(here + "\dados_estatisticos\serie_historica_ano.txt", "w") as new_created_file:
-        #usar append para colocar no arquivo
-        # for i in range(len(lstNew)):
-        #     Flist.append(lstNew[i][0])
-        #     Flist.append(lstNew[i][1])
-        #     Flist.append(lstNew[i][10])
-        #     Flist.append(lstNew[i][11])
-        #     Flist.append(lstNew[i][12])
-        #     Flist.append(lstNew[i][15])
-        # print(len(lstNew))
         for i in range(len(lstNew)):
             Flist.append(lstNew[i][0])
             Flist.append(lstNew[i][1])
             Flist.append(lstNew[i][10])
-        print(Flist)
+            Flist.append(lstNew[i][11])
+            Flist.append(lstNew[i][12])
+            try:
+                Flist.append(lstNew[i][15]) #disfuncional
+            except:
+                Flist.append('BRANCA')
+        
         
 data_lst(lstNew)
 
