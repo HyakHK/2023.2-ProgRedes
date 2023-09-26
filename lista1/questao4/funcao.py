@@ -8,9 +8,10 @@ sha = here + '\\serie_historica_anp'
 #Criar diretorio dados_estatisticos no mesmo diretorio do .py
 def criarDir():
     try:
-        os.mkdir(here + "/dados_estatisticos", exist_ok=True)
+        os.mkdir(here + "\\dados_estatisticos", exist_ok=True)
     except:
         print('Erro:' ,sys.exc_info()[0])
+
 criarDir()
 
 
@@ -36,6 +37,7 @@ def uniteFd():
                         line = line.replace(';;',';')
                         new_created_file.write(line)
                     new_created_file.write("\n")
+            
             except Exception as e:
                 print(f"Erro ao abrir o arquivo {file_path}: {e}")
 
