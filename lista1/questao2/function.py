@@ -1,15 +1,9 @@
 
-
-
 import array
-
-
 def ler_arquivo(nome_arquivo):
     try:
         with open(nome_arquivo, 'r') as arquivo:
             content = arquivo.read()
-
-
         lido = True
     except:
         lido = False
