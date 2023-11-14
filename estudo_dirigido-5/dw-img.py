@@ -7,7 +7,7 @@ url.remove("")
 url_host = url[1]
 url_image = url[2]
 
-#Lembrar de abrir e fechar conexão, ou erro "bad request"
+#Lembrar de abrir e fechar conexão ou ira executar infinitamente
 url_request = f'GET {url_image} HTTP/1.1\r\nHost: {url_host}\r\nConnection: close\r\n\r\n'
 
 HOST_PORT   = 80
