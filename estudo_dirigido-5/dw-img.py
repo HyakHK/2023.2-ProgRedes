@@ -1,12 +1,16 @@
 import socket
 
-url_host    = 'httpbin.org'
-url_image   = '/image/png'
+url = input("Escreva a URL completa da imagem: ")
+url = url.split('/')
+url.remove("")
+
+url_host = url[1]
+url_image = url[2]
 
 url_request = f'GET {url_image} HTTPS/1.1\r\nHOST: {url_host}\r\n\r\n' or f'GET {url_image} HTTP/1.1\r\nHOST: {url_host}\r\n\r\n'
 
 HOST_PORT   = 80
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 4058
 
 sock_img = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock_img.connect((url_host, HOST_PORT))
@@ -38,6 +42,6 @@ headers   = data_ret[:position]
 image     = data_ret[position+4:]
 
 # Salvando a imagem
-file_output = open('image.png', 'wb')
+file_output = open(url_image, 'wb')
 file_output.write(image)
 file_output.close()
