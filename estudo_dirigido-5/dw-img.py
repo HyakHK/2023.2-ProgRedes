@@ -7,10 +7,12 @@ url.remove("")
 url_host = url[1]
 url_image = url[2]
 
-url_request = f'GET {url_image} HTTPS/1.1\r\nHOST: {url_host}\r\n\r\n' or f'GET {url_image} HTTP/1.1\r\nHOST: {url_host}\r\n\r\n'
+#Lembrar de abrir e fechar conexão, ou erro "bad request"
+url_request = f'GET {url_image} HTTP/1.1\r\nHost: {url_host}\r\nConnection: close\r\n\r\n'
 
 HOST_PORT   = 80
 BUFFER_SIZE = 4058
+
 
 sock_img = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock_img.connect((url_host, HOST_PORT))
@@ -19,6 +21,7 @@ sock_img.sendall(url_request.encode())
 print('\nBaixando a imagem...')
 # Montado a variável que armazenará os dados de retorno
 data_ret = b''
+
 while True:
     data = sock_img.recv(BUFFER_SIZE)
     if not data: break
