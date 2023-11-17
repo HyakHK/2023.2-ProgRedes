@@ -8,8 +8,10 @@ url_host = url[1]
 url_image = url[2:]
 url_image = '/'.join(url_image)
 #Retirar informações extras não referentes a url da imagem
-url_image = url_image.split('?')[0]
-
+try:
+    url_image = url_image.split('?')[0]
+except:
+    pass
 #Lembrar de abrir e fechar conexão ou ira executar infinitamente
 url_request = f'GET {url_image} HTTP/1.1\r\nHost: {url_host}\r\nConnection: close\r\n\r\n'
 
