@@ -1,7 +1,7 @@
 import socket,sys
 from separar import *
 
-strHost = 'www.ifrn.edu.br'
+strHost = str(input("Digite a URL: "))
 
 ipHost = socket.gethostbyname(strHost)
 list = criarList()
