@@ -25,4 +25,3 @@ for n in list:
     else:
         print(f'Porta {port}: Protocolo: {proto}: ({desc})/ Status: {stat}')
         sock.close()
-
