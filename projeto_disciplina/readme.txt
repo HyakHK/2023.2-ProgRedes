@@ -1,5 +1,4 @@
-Utilização da porta TCP no servidor devido ao controle de transmissão
-Utilização da porta UDP no usuario para os protocolos de datagramas do mesmo
+Utilização da porta TCP para o use do "handshake" a partur de que o aumento de velocidade do protocolo UDP não tem importância 
 
 info -c = mostrar dados do cliente atual
 permanecer conectado
