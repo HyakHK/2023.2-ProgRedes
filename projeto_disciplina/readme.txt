@@ -1,4 +1,4 @@
-Utilização da porta TCP para o use do "handshake" a partur de que o aumento de velocidade do protocolo UDP não tem importância 
+Utilização da porta TCP para o use do "handshake" a partur de que o aumento de velocidade do protocolo UDP e a remoção dos comandos enfileirados a partir que não sera usado em longa escala
 
 info -c = mostrar dados do cliente atual
 permanecer conectado
