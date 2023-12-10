@@ -1,5 +1,6 @@
 import socket,subprocess
 from socket_constants import *
+from comandos import *
 
 print('Recebendo Mensagens...\n\n')
 
@@ -21,11 +22,13 @@ while True:
         if not mensagem: break
         print(cliente, mensagem.decode(CODE_PAGE))
         
-        # Devolvendo uma mensagem (echo) ao cliente
-        # Utilizando subprocess pois os nã funciona neste caso
+        # Devolvendo uma mensagem ao cliente
+        # Utilizando subprocess pois os não funciona neste caso
         try:
-            resultado = subprocess.run(mensagem.decode(CODE_PAGE), shell=True, capture_output=True, text=True)
-            mensagem_retorno = resultado.stdout
+            opt = {'/t' : teste(cliente[0])}
+            comando = opt[mensagem.decode(CODE_PAGE)]
+            mensagem_retorno = comando
+
         except Exception as e:
             mensagem_retorno = str(e)
 
@@ -33,3 +36,4 @@ while True:
 
     print('Finalizando Conexão do Cliente ', cliente)
     conexao.close()
+    exit()
