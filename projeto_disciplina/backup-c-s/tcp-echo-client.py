@@ -15,7 +15,6 @@ id_chat = retorno['result'][0]['message']['chat']['id']
 # Criando o socket TDP
 tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# Ligando o socket a porta
 tcp_socket.connect((HOST_SERVER, SOCKET_PORT))
 
 while True:
