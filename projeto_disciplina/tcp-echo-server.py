@@ -25,7 +25,9 @@ while True:
         # Devolvendo uma mensagem ao cliente
         # Utilizando subprocess pois os não funciona neste caso
         try:
-            opt = {'/t' : teste(cliente[0])}
+            opt = {'/t' : teste(cliente[0]),
+                   '/s' : s_info
+                   }
             comando = opt[mensagem.decode(CODE_PAGE)]
             mensagem_retorno = comando
 
