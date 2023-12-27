@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = '6684795612:AAH0dfm-83OAZSBV11CZleKx0RNHjQC0cR4'
+API_KEY = ''
 
 strURL = f'https://api.telegram.org/bot{API_KEY}'
 

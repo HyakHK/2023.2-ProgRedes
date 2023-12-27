@@ -4,8 +4,6 @@ feito:
 Comandos a partir do Prompt
 
 a fazer:
-mudar o codigo do cliente para aceitar mensagem do telegram(denovo)
-
 permanecer conectado
 testar coneção de tempo em tempo(automatico e manual)
 não permitir multiplas instancias do mesmo usuario e servidor
