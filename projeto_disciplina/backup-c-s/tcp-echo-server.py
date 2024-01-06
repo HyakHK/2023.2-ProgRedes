@@ -25,14 +25,10 @@ while True:
         # Devolvendo uma mensagem ao cliente
         # Utilizando subprocess pois os não funciona neste caso
         try:
-            opt = {'/t' : teste(cliente[0]),
-                   '/s' : s_info()
-                   }
-            comando = opt[mensagem.decode(CODE_PAGE)]
-            mensagem_retorno = comando
+            mensagem_retorno = rDado(mensagem.decode(CODE_PAGE))
 
         except Exception as e:
-            mensagem_retorno = str(e)
+            mensagem_retorno = str(e) 
 
         conexao.send(mensagem_retorno.encode(CODE_PAGE))
 
